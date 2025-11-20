@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game Premium</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Jeu de Mémoire</h1>
+
+<div class="hud">
+    <p>⏳ Temps restant : <span id="timer">60</span>s</p>
+    <button id="share" style="display:none;">Partager sur LinkedIn</button>
+</div>
+
+<div id="game-board">
+    {% for img in cards %}
+    <div class="card" data-value="{{ img }}">
+        <div class="front"></div>
+        <div class="back">
+            <img src="/static/img/{{ img }}">
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="result"></div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
