@@ -3,7 +3,7 @@ import random, json, os, datetime
 
 app = Flask(__name__)
 
-IMAGES = [f"img{i}.jpg" for i in range(1, 9)]  # 8 images
+IMAGES = [f"p{i}.jpg" for i in range(1, 9)]  # 8 images
 
 @app.route("/")
 def index():
