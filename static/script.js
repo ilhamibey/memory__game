@@ -71,7 +71,7 @@ function endGame(victory) {
         `;
 
         saveScore();
-        document.getElementById("share").style.display = "inline-block";
+        document.getElementById("share").style.display = "inline-flex";
 
         document.getElementById("replay-btn").onclick = () => {
             window.location.reload();
