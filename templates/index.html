@@ -10,6 +10,7 @@
 <h1>Jeu de Mémoire</h1>
 
 <div class="hud">
+    <button onclick="window.location.reload()" class="replay-btn">Rejouer</button>
     <p>⏳ Temps restant : <span id="timer">60</span>s</p>
     <button id="share" style="display:none;">Partager sur LinkedIn</button>
 </div>
@@ -28,5 +29,15 @@
 <div id="result"></div>
 
 <script src="/static/script.js"></script>
+<script>
+// Show replay button at end of game
+if (typeof showWinModal === 'function') {
+const originalShowWin = showWinModal;
+showWinModal = function() {
+originalShowWin();
+document.getElementById('replay-end').classList.remove('hidden');
+}
+}
+</script>
 </body>
 </html>
