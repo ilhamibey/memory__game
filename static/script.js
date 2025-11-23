@@ -80,7 +80,7 @@ function endGame(victory) {
     } else {
         resultDiv.innerHTML = `
             <h2>⏳ Temps écoulé !</h2>
-            <button id="replay-btn">Rejouer</button>
+            <button id="replay-btn" class="replay-btn">Rejouer</button>
         `;
 
         document.getElementById("replay-btn").onclick = () => {
