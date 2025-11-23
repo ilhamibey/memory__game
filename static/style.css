@@ -72,3 +72,15 @@ body {
     border: 2px solid #b4f0ae;
     cursor: pointer;
 }
+
+.linkedin-logo {
+    padding-left: 4px;
+}
+
+.share-linkedin {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin-bottom: 10px
+}
