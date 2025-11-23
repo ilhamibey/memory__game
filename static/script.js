@@ -62,13 +62,31 @@ function endGame(victory) {
     const resultDiv = document.getElementById("result");
 
     if (victory) {
-        resultDiv.innerHTML = `<h2>🎉 Bravo ! Paires trouvées !</h2>`;
+        resultDiv.innerHTML = `
+            <h2>🎉 Bravo ! Paires trouvées !</h2>
+            <button id="replay-btn">Rejouer</button>
+        `;
+
         saveScore();
         document.getElementById("share").style.display = "inline-block";
+
+        // ➜ Action du bouton Rejouer
+        document.getElementById("replay-btn").onclick = () => {
+            window.location.reload();
+        };
+
     } else {
-        resultDiv.innerHTML = `<h2>⏳ Temps écoulé !</h2>`;
+        resultDiv.innerHTML = `
+            <h2>⏳ Temps écoulé !</h2>
+            <button id="replay-btn">Rejouer</button>
+        `;
+
+        document.getElementById("replay-btn").onclick = () => {
+            window.location.reload();
+        };
     }
 }
+
 
 function saveScore() {
     const name = prompt("Entrez votre nom pour le classement :");
