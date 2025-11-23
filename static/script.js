@@ -67,7 +67,7 @@ function endGame(victory) {
     if (victory) {
         resultDiv.innerHTML = `
             <h2>🎉 Bravo ! Paires trouvées !</h2>
-            <button id="replay-btn">Rejouer</button>
+            <button id="replay-btn" class="replay-btn">Rejouer</button>
         `;
 
         saveScore();
