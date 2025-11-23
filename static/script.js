@@ -59,6 +59,9 @@ function endGame(victory) {
     if (gameFinished) return;
     gameFinished = true;
 
+    // ➜ Empêche de cliquer sur les cartes après la fin du jeu
+    lockBoard = true;
+
     const resultDiv = document.getElementById("result");
 
     if (victory) {
@@ -70,7 +73,6 @@ function endGame(victory) {
         saveScore();
         document.getElementById("share").style.display = "inline-block";
 
-        // ➜ Action du bouton Rejouer
         document.getElementById("replay-btn").onclick = () => {
             window.location.reload();
         };
@@ -86,7 +88,6 @@ function endGame(victory) {
         };
     }
 }
-
 
 function saveScore() {
     const name = prompt("Entrez votre nom pour le classement :");
