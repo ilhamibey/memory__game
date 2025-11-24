@@ -3,13 +3,17 @@ import random, json, os, datetime
 
 app = Flask(__name__)
 
-IMAGES = [f"img{i}.jpg" for i in range(1, 9)]  # 8 images
+# Load ALL .jpg images dynamically from static/images
+IMAGE_FOLDER = "static/img"
+IMAGES = [img for img in os.listdir(IMAGE_FOLDER) if img.lower().endswith(".jpg")]
 
 @app.route("/")
 def index():
-    cards = IMAGES * 2
-    random.shuffle(cards)
-    return render_template("index.html", cards=cards)
+    # Pick 8 random images for this round
+   selected = random.sample(IMAGES, 8)
+   cards = selected * 2
+   random.shuffle(cards)
+   return render_template("index.html", cards=cards)
 
 @app.route("/save_score", methods=["POST"])
 def save_score():
